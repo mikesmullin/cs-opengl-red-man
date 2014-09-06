@@ -17,9 +17,9 @@ namespace MikesCSOpenGL1
 		{
 			base.OnLoad (e);
 			Title = "Hello OpenTK!";
-			GL.ClearColor (Color.CornflowerBlue);
+			GL.ClearColor(0f,0f,0f,1f);
 
-			string[] lines = System.IO.File.ReadAllLines(@"cube.raw");
+			string[] lines = System.IO.File.ReadAllLines(@"man.raw");
 			foreach (var line in lines) {
 				string[] points = line.Split(' ');
 				faces.Add(new Vector3[3] {
@@ -30,23 +30,16 @@ namespace MikesCSOpenGL1
 			}
 		}
 
-		private float rotX = 0f;
-		private float rotY = 0f;
-		private float rotZ = 0f;
+		private float x=0f, y=0f, rx=0f, ry=0f;
 		protected override void OnUpdateFrame (FrameEventArgs e)
 		{
 			base.OnUpdateFrame (e);
-			OpenTK.Input.GamePadState state = OpenTK.Input.GamePad.GetState (0);
-			//Console.WriteLine (state.ToString ());
-			float x = state.ThumbSticks.Right.X;
-			float y = state.ThumbSticks.Right.Y;
-			rotX = 30 * x;
-			rotY = 30 * y;
-			rotZ = 30 * state.ThumbSticks.Left.X;
-			Console.WriteLine ("rotX: "+rotX+", rotY:"+rotX);
+			OpenTK.Input.GamePadState state = OpenTK.Input.GamePad.GetState(0);
+			x = state.ThumbSticks.Left.X;
+			y = state.ThumbSticks.Left.Y;
+			rx = state.ThumbSticks.Right.X;
+			ry = state.ThumbSticks.Right.Y;
 		}
-
-		private float z = 4.0f;
 
 		protected override void OnRenderFrame (FrameEventArgs e)
 		{
@@ -58,22 +51,27 @@ namespace MikesCSOpenGL1
 			Matrix4 modelview = Matrix4.LookAt (Vector3.Zero, Vector3.UnitZ, Vector3.UnitY);
 			GL.MatrixMode (MatrixMode.Modelview);
 			GL.LoadMatrix (ref modelview);
-			GL.Rotate(rotX, 0f, -1f, 0f);
-			GL.Rotate(rotY, -1f, 0f, 0f);
-			GL.Rotate(rotZ, 0f, 0f, -1f);
-			GL.Translate (rotX, rotY, rotZ);
-			GL.Translate (0, 0, 7f);
+			GL.Translate (5f*x*-1, 2f*y, 9f);
+			GL.Rotate(180f*rx, 0, 1f, 0f);
+			GL.Rotate(180f*ry, 1f, 0, 0f);
 
-			GL.Color3 (1.0f, 1.0f, 1.0f);
 
 			// draw triangles
 			foreach (var v3 in faces) {				
 				GL.Begin (PrimitiveType.Triangles);
+				GL.Color3 (1f, 0f, 0f);
 				GL.Vertex3 (v3[0]);
+				GL.Color3 (0.5f, 0f, 0f);
 				GL.Vertex3 (v3[1]);
+				//GL.Color3 (0f, 0f, 1f);
 				GL.Vertex3 (v3[2]);
 				GL.End ();
 			}
+			//GL.Rotate(rotX, 0f, -1f, 0f);
+			//GL.Rotate(rotY, -1f, 0f, 0f);
+			//GL.Rotate(rotZ, 0f, 0f, -1f);
+			//GL.Translate (rotX*-1, rotY, rotZ);
+
 			SwapBuffers ();
 		}
 

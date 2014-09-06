@@ -1,9 +1,10 @@
+C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\cube.raw
+C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\man.raw
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\MikesCSOpenGL1.exe
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\MikesCSOpenGL1.pdb
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\OpenTK.dll
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\OpenTK.pdb
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\OpenTK.xml
-C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\obj\x86\Debug\MikesCSOpenGL1.csprojResolveAssemblyReference.cache
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\obj\x86\Debug\MikesCSOpenGL1.exe
 C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\obj\x86\Debug\MikesCSOpenGL1.pdb
-C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\bin\Debug\cube.raw
+C:\Users\Mike\Documents\Projects\MikesCSOpenGL1\MikesCSOpenGL1\obj\x86\Debug\MikesCSOpenGL1.csprojResolveAssemblyReference.cache
